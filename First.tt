@@ -1,0 +1,16 @@
+<#@ template language="C#" debug="True" hostSpecific="True"                          #>
+<#@ output extension=".generated.cs"                                                 #>
+<#@ include file="$(LinqToDBT4FirebirdTemplatesDirectory)LinqToDB.Firebird.Tools.ttinclude" #>
+<#@ include file="$(LinqToDBT4FirebirdTemplatesDirectory)PluralizationService.ttinclude"    #>
+<# //@ include file="$(ProjectDir)LinqToDB.Templates\LinqToDB.Firebird.Tools.ttinclude" #>
+<# //@ include file="$(ProjectDir)LinqToDB.Templates\PluralizationService.ttinclude"    #>
+<#
+
+	NamespaceName = "DataModel";
+
+	LoadFirebirdMetadata("localahost", @"C:\Obmen\First.fdb");
+//	LoadFirebirdMetadata(string server, string database, string uid, string password);
+//	LoadFirebirdMetadata(string connectionString);
+
+	GenerateModel();
+#>
